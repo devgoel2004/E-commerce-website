@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+}
+/* font-family: "Poppins", sans-serif;
+  font-family: "Playfair Display", serif;*/
+/*NavBar Css*/
+.navbar {
+  font-family: "Poppins";
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: 0.5px solid gray !important;
+}
+.nav-link {
+  font-weight: 300 !important;
+}
+.active {
+  border-bottom: 2px solid black;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}
+/*Footer*/
+.footer {
+  color: white;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+.footer a:hover {
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+/*Page Not Found*/
+.pageNotFound {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-not-found h1 {
+  font-size: 82px;
+  font-weight: bold;
+}
+.page-not-found button {
+  padding: 5px;
+  background-color: white;
+  font-size: 20px;
+}
+.page-not-found button:hover {
+  background-color: #000;
+  color: white;
+}
+/*Contact Page*/
+.contactImage {
+  display: flex;
+
+  justify-content: center;
+}
+.contact {
+  width: 100%;
+}
+.heading {
+  text-transform: uppercase;
+}
+.contact-heading {
+  padding: 20px;
+}
+.contactBanner {
+  padding-top: 20px;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+.contact-heading h1 {
+  width: 50%;
+  padding: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: "Rpboto", sans-serif;
+}
+.contact-heading p {
+  font-size: 16px;
+}
+.contact-page {
+  display: flex;
+  min-height: 70vh;
+  align-items: center;
+}
+/*About Page*/
+.row {
+  width: 100%;
+}
+.about-paragraph {
+  font-family: "Poppins";
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.about-container {
+  min-height: 70vh;
+}
+/*Policy Page*/
+.policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.policy img {
+  margin-top: 10px;
+}
