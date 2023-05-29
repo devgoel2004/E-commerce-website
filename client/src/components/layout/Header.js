@@ -6,7 +6,7 @@ const Header = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link to="/" className="navbar-brand">
-          <GiShoppingCart /> Balaji Feb Tex
+          <GiShoppingCart /> Balaji Fab Tex
         </Link>
         <button
           className="navbar-toggler"

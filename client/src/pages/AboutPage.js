@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title={"About Us - BalajiFabTex"}>
       <div className="container about-container">
         <div className="row">
           <div className="col-lg-6 col-md-12">

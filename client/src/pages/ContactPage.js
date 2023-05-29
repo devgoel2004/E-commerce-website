@@ -4,7 +4,7 @@ import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 const ContactPage = () => {
   return (
-    <Layout>
+    <Layout title={"Contact Us - BalajiFabTex"}>
       <div className="container contact-page">
         <div className="row contact">
           <div className="contactImage col-lg-6 col-md-12">

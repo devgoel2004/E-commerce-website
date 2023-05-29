@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 
 const PolicyPage = () => {
   return (
-    <Layout>
+    <Layout title={"Privacy Page - BalajiFabTex"}>
       <div className="container policy">
         <div className="row">
           <div

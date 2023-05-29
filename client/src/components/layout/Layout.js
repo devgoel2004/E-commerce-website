@@ -7,7 +7,7 @@ const Layout = ({ children, title, description, keywords, author }) => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Title</title>
+        <title>{title}</title>
         <meta name="description" content="Free Web tutorials"></meta>
         <meta name="keywords" content="HTML, CSS, JavaScript"></meta>
         <meta name="author" content="John Doe"></meta>
@@ -18,5 +18,10 @@ const Layout = ({ children, title, description, keywords, author }) => {
     </div>
   );
 };
-
+Layout.defaultProps = {
+  title: "E commerce App",
+  description: "mern stack project",
+  keywords: "mern,react,node,mongodb",
+  author: "Dev Goel",
+};
 export default Layout;

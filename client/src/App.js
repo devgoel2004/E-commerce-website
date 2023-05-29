@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import PolicyPage from "./pages/PolicyPage";
 import PageNotFound from "./pages/PageNotFound";
+import Register from "./pages/Auth/Register";
 const App = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/policy" element={<PolicyPage />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
