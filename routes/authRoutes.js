@@ -4,6 +4,7 @@ import loginControllers from "../controllers/loginController.js";
 import testController from "../controllers/testController.js";
 import requireSignIn from "../middlewares/authMiddleware.js";
 import isAdmin from "../middlewares/adminAccessMiddleware.js";
+
 //router object
 const router = express.Router();
 
@@ -16,4 +17,10 @@ router.post(`/login`, loginControllers);
 
 //test router
 router.get("/test", requireSignIn, isAdmin, testController);
+
+//protected route auth
+router.get(`/user-auth`, requireSignIn, (req, res) => {
+  res.status(200).send({ ok: true });
+});
+
 export default router;
