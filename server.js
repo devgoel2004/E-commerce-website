@@ -5,6 +5,8 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import cors from "cors";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 //configure env
 dotenv.config();
 
@@ -23,7 +25,8 @@ app.get(`/`, (req, res) => {
 
 //routes
 app.use(`/api/v1/auth`, authRoutes);
-
+app.use(`/api/v1/category`, categoryRoutes);
+app.use("/api/v1/products", productRoutes);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`.bgCyan.white);

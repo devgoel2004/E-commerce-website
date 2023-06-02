@@ -9,16 +9,17 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
   //form function
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email, password, address, phone);
+    console.log(name, email, password, address, phone,answer);
     try {
       const res = await axios.post(
         "http://localhost:8080/api/v1/auth/register",
-        { name, email, password, phone, address }
+        { name, email, password, phone, address, answer }
       );
       //console.log(res.data.sucess);
       if (res) {
@@ -98,7 +99,18 @@ const Register = () => {
               required
             />
           </div>
-
+          <div className="form-group">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="form-control"
+              id="exampleInputAnswer"
+              aria-describedby="emailHelp"
+              placeholder="What is your favorite sports?"
+              required
+            />
+          </div>
           <button type="submit" className="btn btn-primary">
             Submit
           </button>

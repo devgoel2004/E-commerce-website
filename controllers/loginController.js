@@ -35,10 +35,12 @@ const loginControllers = async (req, res) => {
       sucess: true,
       message: `login successfully`,
       user: {
+        _id: user._id,
         name: user.name,
         email: user.email,
         phone: user.phone,
         address: user.address,
+        role: user.role,
       },
       token,
     });

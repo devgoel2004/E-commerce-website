@@ -34,7 +34,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link" aria-current="page">
+                <NavLink to="/" className="nav-link" aria-current="page">
                   Home
                 </NavLink>
               </li>
@@ -58,14 +58,43 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <li className="nav-item">
+                  <li className="nav-item dropdown">
                     <NavLink
-                      onClick={handleLogout}
-                      to="/login"
-                      className="nav-link">
-                      Logout
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      {auth?.user?.name}
                     </NavLink>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="navbarDropdown">
+                      <li>
+                        <NavLink
+                          className="dropdown-item"
+                          to={`/dashboard/${
+                            auth?.user?.role === 1 ? `admin` : `user`
+                          }`}
+                          href="#">
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          onClick={handleLogout}
+                          to="/login"
+                          className="dropdown-item">
+                          Logout
+                        </NavLink>
+                      </li>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                    </ul>
                   </li>
+                  <li className="nav-item"></li>
                 </>
               )}
               <li className="nav-item">
