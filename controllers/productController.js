@@ -73,6 +73,11 @@ export const getSingleProductController = async (req, res) => {
     const product = await productModel
       .findOne({ slug: req.params.slug })
       .select(`photo`)
+      .select(`name`)
+      .select(`price`)
+      .select(`description`)
+      .select(`shipping`)
+      .select(`quantity`)
       .populate(`category`);
     res.status(200).send({
       success: true,
@@ -164,6 +169,89 @@ export const updateProductController = async (req, res) => {
       success: false,
       err,
       message: "Error in updated product",
+    });
+  }
+};
+//const product filter
+export const productFilterControllers = async (req, res) => {
+  try {
+    const { checked, radio } = req.body;
+    let args = {};
+    if (checked.length > 0) args.category = checked;
+    if (radio.length) args.price = { $gte: radio[0], $lte: radio[1] };
+    const products = await productModel.find(args);
+    res.status(200).send({
+      success: true,
+      products,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({
+      success: false,
+      message: `Error while Filter Products`,
+    });
+  }
+};
+//product count
+export const productCountController = async (req, res) => {
+  try {
+    const total = await productModel.find({}).estimatedDocumentCount();
+    res.status(200).send({
+      success: true,
+      total,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({
+      message: `Error in product count`,
+      err,
+      success: false,
+    });
+  }
+};
+//product per page
+export const productListController = async (req, res) => {
+  try {
+    const perPage = 6;
+    const page = req.params.page ? req.params.page : 1;
+    const products = await productModel
+      .find({})
+      .select("-photo")
+      .skip((page - 1) * perPage)
+      .limit(perPage)
+      .sort({ createdAt: -1 });
+    res.status(200).send({
+      success: true,
+      products,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({
+      success: false,
+      message: `Error in per page ctrl`,
+      err,
+    });
+  }
+};
+//search product controller
+export const searchProductController = async (req, res) => {
+  try {
+    const { keyword } = req.params;
+    const results = await productModel
+      .find({
+        $or: [
+          { name: { $regex: keyword, $options: "i" } },
+          { description: { $regex: keyword, $options: "i" } },
+        ],
+      })
+      .select("-photo");
+    res.json(results);
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({
+      success: false,
+      message: `Error in Search product API`,
+      err,
     });
   }
 };

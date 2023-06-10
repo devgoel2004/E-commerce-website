@@ -19,6 +19,8 @@ import CreateProduct from "./pages/Admin/CreateProduct";
 import User from "./pages/Admin/User";
 import Profile from "./pages/user/Profile";
 import Orders from "./pages/user/Orders";
+import Products from "./pages/Admin/Products";
+import UpdateProduct from "./pages/Admin/UpdateProduct";
 const App = () => {
   return (
     <>
@@ -34,6 +36,9 @@ const App = () => {
           <Route path="admin" element={<AdminDashboard />} />
           <Route path="admin/create-category" element={<CreateCategory />} />
           <Route path="admin/create-products" element={<CreateProduct />} />
+          <Route path="admin/products/:slug" element={<UpdateProduct />} />
+          <Route path="admin/products" element={<Products />} />
+
           <Route path="admin/users" element={<User />} />
         </Route>
         <Route path="/contact" element={<ContactPage />} />

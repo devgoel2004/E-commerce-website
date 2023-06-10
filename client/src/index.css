@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* font-family: "Poppins", sans-serif;
+  font-family: "Playfair Display", serif;*/
+/*NavBar Css*/
+.navbar {
+  font-family: "Poppins";
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: 0.5px solid gray !important;
+}
+.nav-link {
+  font-weight: 300 !important;
+}
+.active {
+  border-bottom: 2px solid black;
+}
+.navbar-brand {
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}
+/*Footer*/
+.footer {
+  color: white;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+.footer a:hover {
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
+/*Page Not Found*/
+.pageNotFound {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-not-found h1 {
+  font-size: 82px;
+  font-weight: bold;
+}
+.page-not-found button {
+  padding: 5px;
+  background-color: white;
+  font-size: 20px;
+}
+.page-not-found button:hover {
+  background-color: #000;
+  color: white;
+}
+/*Contact Page*/
+.contactImage {
+  display: flex;
+
+  justify-content: center;
+}
+.contact {
+  width: 100%;
+}
+.heading {
+  text-transform: uppercase;
+}
+.contact-heading {
+  padding: 20px;
+}
+.contactBanner {
+  padding-top: 20px;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+.contact-heading h1 {
+  width: 50%;
+  padding: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: "Rpboto", sans-serif;
+}
+.contact-heading p {
+  font-size: 16px;
+}
+.contact-page {
+  display: flex;
+  min-height: 70vh;
+  align-items: center;
+}
+/*About Page*/
+.row {
+  width: 100%;
+}
+.about-paragraph {
+  font-family: "Poppins";
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+.about-container {
+  min-height: 70vh;
+}
+/*Policy Page*/
+.policy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.policy img {
+  margin-top: 10px;
+}
+/*Register Page*/
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  flex-direction: column;
+}
+.form-div-box {
+  width: 50vw;
+  border: 1px solid black;
+  padding: 16px;
+}
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  flex-direction: column;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+}
+
+.form-container form {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  width: 30vw;
+  background-color: #fff;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+}
+
+.form-container form input {
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  margin-top: 20px;
+}
+
+.form-container form button {
+  border: 1px solid black;
+  border-radius: 0;
+  background-color: #000;
+  color: white;
+  width: 100%;
+
+  margin-top: 20px;
+}
+.form-container form button:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+}
+.product-link {
+  text-decoration: none;
+  color: black;
+}
+/*Media query*/
+@media screen and (max-width: 1015px) {
+  .form-container form {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-container form {
+    width: 90vw;
+  }
+}

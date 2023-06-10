@@ -36,8 +36,8 @@ const CreateCategory = () => {
         "http://localhost:8080/api/v1/category/get-category"
       );
       console.log(data);
-      if (data.success) {
-        setCategories(data.category);
+      if (data?.success) {
+        setCategories(data?.category);
       }
     } catch (err) {
       console.log(err);
@@ -54,11 +54,11 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost.8080/api/v1/category/update-category/${selected._id}`,
+        `http://localhost:8080/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data.success) {
-        toast.success(data.message);
+        toast.success(`${updatedName} is updated`);
         setSelected(null);
         setUpdatedName("");
         setVisible(false);
@@ -67,6 +67,22 @@ const CreateCategory = () => {
         toast.error(data.message);
       }
     } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleDelete = async (pId) => {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:8080/api/v1/category/delete-category/${pId}`
+      );
+      if (data.success) {
+        toast.success(`${name} is deleted`);
+        getAllCategory();
+      } else {
+        toast.error("Something went wrong");
+      }
+    } catch (err) {
+      console.log(err);
       toast.error("Something went wrong");
     }
   };
@@ -78,15 +94,15 @@ const CreateCategory = () => {
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Manage Category</h1>
-            <div className="p-3 w-50">
+            <h1 className="text-center mt-3">Manage Category</h1>
+            <div className="p-3 w-100">
               <CategoryForm
                 handleSubmit={handleSubmit}
                 value={name}
                 setValue={setName}
               />
             </div>
-            <div className="w-75">
+            <div className="w-100">
               <table class="table">
                 <thead>
                   <tr>
@@ -108,7 +124,13 @@ const CreateCategory = () => {
                           }}>
                           Edit
                         </button>
-                        <button className="btn btn-danger ms-2">Delete</button>
+                        <button
+                          className="btn btn-danger ms-2"
+                          onClick={() => {
+                            handleDelete(c._id);
+                          }}>
+                          Delete
+                        </button>
                       </td>
                     </tr>
                   ))}
