@@ -62,7 +62,7 @@ const CreateCategory = () => {
         setSelected(null);
         setUpdatedName("");
         setVisible(false);
-        getAllCategory();
+        getAllCategory(); 
       } else {
         toast.error(data.message);
       }
